@@ -21,30 +21,40 @@
 
 
 
-$('#on').on('click', function () {
-    //1)
-    $('#btn1').mouseover(function () {
-        $(this).add('#btn3').css('background-color', 'red');
-    });
-    $('#btn1').mouseleave(function () {
-        $('#btn1').css('background-color', "");
-    });
+//$('#on').on('click', function () {
+//    //1)
+//    $('#btn1').mouseover(function () {
+//        $(this).add('#btn3').css('background-color', 'red');
+//    });
+//    $('#btn1').mouseleave(function () {
+//        $('#btn1').css('background-color', "");
+//    });
 
-    //2)
-    $('#btn2').mouseover(function () {
-        $('#btn1').add('#btn3').css('background-color', 'red');
-    });
-    $('#btn2').on('dblclick', function () {
-        $(this).add('#btn2').css('background-color', 'green');
-    });
+//    //2)
+//    $('#btn2').mouseover(function () {
+//        $('#btn1').add('#btn3').css('background-color', 'red');
+//    });
+//    $('#btn2').on('dblclick', function () {
+//        $(this).add('#btn2').css('background-color', 'green');
+//    });
 
-    //3)
-    $('#btn3').on('dblclick', function () {
-        $('#btn1').off('mouseleave');
-    });
-});
+//    //3)
+//    $('#btn3').on('dblclick', function () {
+//        $('#btn1').off('mouseleave');
+//    });
+//});
 
-$('#off').on('click', function () {
-    $('#btn1, #btn2, #btn3').off();
+//$('#off').on('click', function () {
+//    $('#btn1, #btn2, #btn3').off();
+//});
+
+//Домашняя работа
+
+$('#btn1').on('click', function () {
+    $('#btn2').off();
+    $('#btn1').css('background-color', "");
+    $('#btn2').on($('#input1').val(), function () {
+        $('#btn1').css('background-color', 'green');
+    })
 });
 
